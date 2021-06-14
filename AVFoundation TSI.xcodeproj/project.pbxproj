@@ -8,22 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		25F8286D2670B90700532927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8286C2670B90700532927 /* AppDelegate.swift */; };
-		25F8286F2670B90700532927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8286E2670B90700532927 /* SceneDelegate.swift */; };
 		25F828712670B90700532927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F828702670B90700532927 /* ViewController.swift */; };
-		25F828742670B90700532927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F828722670B90700532927 /* Main.storyboard */; };
 		25F828762670B90900532927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F828752670B90900532927 /* Assets.xcassets */; };
 		25F828792670B90900532927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F828772670B90900532927 /* LaunchScreen.storyboard */; };
+		25F828812670BE6200532927 /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F828802670BE6200532927 /* CameraSession.swift */; };
+		25F828832670CA9000532927 /* VideoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F828822670CA9000532927 /* VideoWriter.swift */; };
+		25F82885267104EA00532927 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F82884267104EA00532927 /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		255D948A2677B52500F5F8C0 /* example.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.MP4; sourceTree = "<group>"; };
 		25F828692670B90700532927 /* AVFoundation TSI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AVFoundation TSI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F8286C2670B90700532927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25F8286E2670B90700532927 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		25F828702670B90700532927 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		25F828732670B90700532927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25F828752670B90900532927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25F828782670B90900532927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25F8287A2670B90900532927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25F828802670BE6200532927 /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
+		25F828822670CA9000532927 /* VideoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWriter.swift; sourceTree = "<group>"; };
+		25F82884267104EA00532927 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		255D94892677B4CF00F5F8C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				255D948A2677B52500F5F8C0 /* example.MP4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		25F828602670B90700532927 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +67,15 @@
 		25F8286B2670B90700532927 /* AVFoundation TSI */ = {
 			isa = PBXGroup;
 			children = (
+				255D94892677B4CF00F5F8C0 /* Resources */,
 				25F8286C2670B90700532927 /* AppDelegate.swift */,
-				25F8286E2670B90700532927 /* SceneDelegate.swift */,
 				25F828702670B90700532927 /* ViewController.swift */,
-				25F828722670B90700532927 /* Main.storyboard */,
 				25F828752670B90900532927 /* Assets.xcassets */,
 				25F828772670B90900532927 /* LaunchScreen.storyboard */,
 				25F8287A2670B90900532927 /* Info.plist */,
+				25F828802670BE6200532927 /* CameraSession.swift */,
+				25F828822670CA9000532927 /* VideoWriter.swift */,
+				25F82884267104EA00532927 /* PreviewView.swift */,
 			);
 			path = "AVFoundation TSI";
 			sourceTree = "<group>";
@@ -126,7 +139,6 @@
 			files = (
 				25F828792670B90900532927 /* LaunchScreen.storyboard in Resources */,
 				25F828762670B90900532927 /* Assets.xcassets in Resources */,
-				25F828742670B90700532927 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +149,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F82885267104EA00532927 /* PreviewView.swift in Sources */,
+				25F828832670CA9000532927 /* VideoWriter.swift in Sources */,
 				25F828712670B90700532927 /* ViewController.swift in Sources */,
+				25F828812670BE6200532927 /* CameraSession.swift in Sources */,
 				25F8286D2670B90700532927 /* AppDelegate.swift in Sources */,
-				25F8286F2670B90700532927 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		25F828722670B90700532927 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25F828732670B90700532927 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		25F828772670B90900532927 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,7 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fanfilterstudios.AVFoundation-TSI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fanfilterstudios.AVFoundation-TSI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
